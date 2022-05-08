@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang = "en-us">
+<head>
+	<!-- Webpage Title -->
+	<title>O24U | Layanan Sewa Peralatan Kesehatan 24 Jam</title>
+
+	<!-- Website Icon -->
+	<link rel = "shortcut icon" type = "image" href = "image/favicon.png">
+
+	<!-- Meta Tags -->
+	<meta charset = "UTF-8"> <!-- Language -->
+	<meta http-equiv='content-language' content='en-us'> <!-- Language -->
+	<meta name = "description" content = "O24U menyediakan layanan sewa peralatan kesehatan 24 jam untuk seluruh area Jabodetabek dengan harga yang terjangkau dan kualitas yang baik."> <!-- Description -->
+	<meta name = "author" content = "O24U"> <!-- Author -->
+
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1"> <!-- Mobile Responsiveness -->
+
+	<!-- Bootstrap 3 Library -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.css">
+	
+	<!-- Main CSS -->
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+		/* Defaults */
+		* {
+			font-family: "Noto Sans", sans-serif;
+		}
+
+		h1 {
+			font-weight: bold;
+			font-size: 3em;
+			margin-bottom: 25px;
+		}
+
+		h2 {
+			font-weight: bold;
+			font-size: 2.75em;
+			margin-bottom: 75px;
+		}
+
+		h3 {
+			font-weight: bold;
+			font-size: 1.25em;
+			margin-bottom: 25px;
+		}
+
+		p {
+			font-size: 1.25em;
+			line-height: 1.75em;
+			margin-bottom: 50px;
+		}
+
+		img {
+			width: 100%;
+		}
+
+		a button {
+			background-color: rgb(237, 99, 66);
+			color: white;
+			font-weight: bold;
+			font-size: 1.35em;
+			border: 1px solid rgb(237, 99, 66);
+			border-radius: 10000px;
+			padding: 15px 25px;
+			min-height: 50px;
+			min-width: 100px;
+		}
+
+		span {
+			color: rgba(51, 157, 120, 1);
+			font-weight: bold;
+		}
+		
+		/* Navigation */
+		nav { 
+			background-color: white;
+			text-align: center;
+			width: 100%;
+			height: 65px;
+			z-index: 100;
+			position: fixed;
+			top: 0;
+			transition: box-shadow .5s ease;
+		}
+
+		.scrolling-active {
+			box-shadow: 0 5px 10px #efefef;
+		}
+
+		nav img {
+			width: 100px;
+			margin-top: 18.5px;
+		}
+
+		/* Header */
+		header {
+			background-image: url("image/background.jpg");
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: 100vh;
+		}
+
+		header div.intro {
+			width: 100%;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(65%);
+		}
+
+		header div.col-md-5 {
+			height: 100vh;
+		}
+
+		header img {
+		  	position: absolute;
+		    left: 0;
+		    bottom: 0;
+		}
+
+		/* Content */
+		div.content {
+			min-height: 100vh;
+			padding: 100px 0;
+		}
+
+		/* Kenapa O24U Section */
+		div.kenapa div.col-sm-3 {
+			text-align: center;
+		}
+
+		div.kenapa img {
+			text-align: center;
+			width: 45%;
+			max-width: 120px;
+		}
+
+		div.kenapa p {
+			font-size: 1.15em;
+			line-height: 1.5em;
+		}
+
+		/* Rawat Yang Tercinta Section */
+		div.rawat {
+			background-color: rgba(245, 245, 245, 1);
+		}
+
+		div.rawat h2 {
+			font-size: 2.75em;
+			margin-bottom: 25px;
+		}
+
+		div.rawat img {
+			max-width: 350px;
+		}
+
+		/* Pilih Kebutuhanmu Section */
+		div.pilih {
+			background-color: rgba(1, 69, 64, 1);
+			text-align: center;
+		}
+
+		div.pilih h2, div.pilih p {
+			color: white;
+		}
+
+		div.pilih h2 {
+			margin-bottom: 25px;
+		}
+
+		/* Apa Kata Mereka Section */
+		div.kata {
+			background-color: rgba(245, 245, 245, 1);
+			text-align: center;
+		}
+
+		div.kata div.col-sm-6 {
+			padding: 0 50px;
+		}
+
+		div.kata img {
+			width: 60%;
+			max-width: 250px;
+			margin-bottom: 50px;
+		}
+
+		div.kata p {
+			text-align: left;
+		}
+
+		/* Voucher Gratis Section */
+		div.voucher h2 {
+			margin-bottom: 50px;
+		}
+
+		div.text label {
+			font-size: 1.25em;
+			font-weight: normal;
+		}
+
+		div.text input {
+			width: 100%;
+			line-height: 2.25em;
+			margin-top: 5px;
+			margin-bottom: 15px;
+		}
+
+		div.agree {
+			margin-top: 15px;
+			margin-bottom: 35px;
+		}
+
+		div.agree label {
+			font-weight: normal;
+		}
+
+		/* Footer */
+		footer {
+			background-color: rgba(245, 245, 245, 1);
+			text-align: center;
+			padding: 50px 0;
+		}
+
+		footer p {
+			font-size: 1em;
+			margin-bottom: 0;
+		}
+
+		/* Responsive CSS */
+		@media (max-width: 1200px) {
+			header div.intro {
+				width: 100%;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				transform: translateY(50%);
+			}
+		}
+
+		@media (max-width: 992px) {
+			header div.col-md-5 {
+				height: 0;
+			}
+		}
+	</style>
+</head>
+<body>
+	<!-- Navigation -->
+	<nav>
+
+		<img src = "image/O24U logo.png" alt = "O24U Logo">
+
+	</nav>
+
+	<!-- Header -->
+	<header>
+
+		<div class = "container">
+			<div class = "col-sm-10 col-sm-offset-1">
+			
+					<div class = "col-md-7">
+						<div class = "intro">
+
+							<h1>Sewa Alat Kesehatan, Kami Siap <span> 24 </span> Jam!</h1>
+
+							<p>Dapatkan peralatan kesehatan terbaik dengan harga yang terjangkau. Kami <span> segera hadir </span> untuk seluruh area Jabodetabek.</p>
+
+							<a href = "#">
+								<button>Voucher Gratis</button>
+							</a>
+
+						</div>
+					</div>
+
+					<div class = "col-md-5">
+
+						<img src = "image/doctor.png" alt = "Female Doctor">
+
+					</div>
+
+			</div>
+		</div>
+
+	</header>
+
+	<!-- Kenapa O24U Section -->
+	<div class = "container content kenapa">
+
+		<div class = "col-sm-12">
+
+			<h2 align = "center">Kenapa <span> O24U </span> ? </h2>
+
+		</div>
+
+		<div class = "col-sm-10 col-sm-offset-1">
+
+			<div class = "col-sm-3">
+
+				<img src = "image/24 hours.png" alt = "24 Hours">
+				
+				<h3>Siap Melayani 24 Jam Sehari</h3>
+
+				<p>Konsultasikan kesulitan mengenai sewa alkes dimanapun, kapanpun</p>
+
+			</div>
+
+			<div class = "col-sm-3">
+
+				<img src = "image/consultation.png" alt = "Consultation">
+
+				<h3>Konsultasi Gratis Dengan Ahli</h3>
+
+				<p>Staff kami merupakan tenaga ahli alat kesehatan yang tersertifikasi</p>
+
+			</div>
+
+			<div class = "col-sm-3">
+
+				<img src = "image/price.png" alt = "Price">
+
+				<h3>Meringankan Biaya Rawat</h3>
+
+				<p>Biaya sewa alat kesehatan terjangkau mulai dari Rp 30.000</p>
+
+			</div>
+
+			<div class = "col-sm-3">
+
+				<img src = "image/delivery.png" alt = "Delivery"d>
+
+				<h3>Pengantaran dan Instalasi Gratis</h3>
+
+				<p>Layanan pengantaran dan instalasi alkes sudah termasuk harga paket</p>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- Rawat Yang Tercinta Section -->
+	<div class = "container-fluid content rawat">
+
+		<div class = "container">
+
+			<div class = "col-sm-10 col-sm-offset-1">
+
+				<div class = "col-sm-5">
+
+					<img src = "image/wheel chair.png" alt = "Wheel Chair">
+
+				</div>
+
+				<div class = "col-sm-7">
+
+					<h2>Rawat yang Tercinta dengan Alat Kesehatan yang Tepat</h2>
+
+					<p>Mulai dari kursi roda, walker, kruk, hingga ranjang pasien, berbagai kebutuhan alkes kami sediakan untukmu 24/7.</p>
+
+					<a href = "#">
+						<button>Voucher Gratis</button>
+					</a>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- Pilih Kebutuhanmu Section -->
+	<div class = "container-fluid content pilih">
+
+		<div class = "container">
+
+			<div class = "col-sm-10 col-sm-offset-1">
+
+				<h2>Pilih Sesuai Kebutuhanmu</h2>
+
+				<p align = "left">Berikut adalah daftar harga dan spesifikasi layanan sewa alkes yang kami sediakan, sesuai dengan kebutuhanmu.</p>
+
+				<img src = "image/pricing.png" alt = "Pricing Table">
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- Apa Kata Mereka Section -->
+	<div class = "container-fluid content kata">
+
+		<div class = "container">
+
+			<div class = "col-sm-10 col-sm-offset-1">
+
+				<h2>Apa Kata Mereka</h2>
+
+				<div class = "col-sm-6">
+
+					<img src = "image/dave.png" alt = "Dave Image">
+
+					<p>"Mau beli ranjang pasien untuk dirumah tapi terlalu mahal, ternyata solusi penyewaan O24U menarik dan efisien juga, daripada lama-lama numpuk dirumah. Semoga cepet buka ya!"</p>
+
+				</div>
+
+				<div class = "col-sm-6">
+
+					<img src = "image/ayu.png" alt = "Ayu Image">
+
+					<p>"Saya sempat kesulitan mencari kruk ketika kakek sakit karena tidak ada yg buka 24 jam. Semoga O24U segera hadir bagi yang memerlukan walker, kruk, ataupun alat bantu jalan lain tengah malam."</p>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- Voucher Gratis Section -->
+	<div class = "container content voucher">
+
+		<div class = "col-sm-10 col-sm-offset-1">
+
+			<div class = "col-sm-6">
+				
+				<h2>Dapatkan Voucher 100k <span> Gratis </span> !</h2>
+
+				<p>
+					O24U akan segera hadir di area Jabodetabek, yang mana voucher akan dapat digunakan ketika bisnis kami berjalan.
+
+					<br><br>
+
+					O24U.team@gmail.com
+				</p>
+
+			</div>
+
+			<div class = "col-sm-6">
+
+				<form action = "https://formspree.io/f/xvoldpdl" method = "POST" id = "form">
+
+					<div class = "form-row text">
+
+						<label for = "name">Nama Lengkap</label>
+
+						<br>
+
+						<input type = "text" name = "name" required>
+
+					</div>
+
+					<div class = "form-row text">
+
+						<label for = "email">Email</label>
+
+						<br>
+
+						<input type = "email" name = "email" required>
+
+					</div>
+
+					<div class = "form-row text">
+
+						<label for = "whatsapp">No WhatsApp</label>
+
+						<br>
+
+						<input type = "text" name = "whatsapp" required>
+
+					</div>
+
+					<div class = "form-row agree">
+
+						<input type = "checkbox">
+
+						<label>Ya, saya setuju untuk menerima email</label>
+
+					</div>
+
+					<div class = "form-row">
+
+						<a href = "https://o24u.online/thank-you/">
+
+							<button type = "submit">Daftar Sekarang</button> 
+
+						</a>
+
+					</div>
+
+				</form>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- Footer -->
+	<footer>
+		
+		<p>©2022 O24U Online • All rights reserved</p>
+
+	</footer>
+
+	<!-- Bootstrap 3 Library -->
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.js"></script>
+
+	<!-- NavBar and Footer Script -->
+	<script src = "main/js/navbar.js"></script>
+
+	<script src = "main/js/footer.js"></script>
+
+	<!-- NavBar Scroll Animation Script -->
+	<script>
+		
+		window.addEventListener ("scroll", function() {
+
+			var $nav = $("nav");
+
+			if (window.scrollY > 0) {
+				$nav.addClass("scrolling-active");
+			} else {
+				$nav.removeClass("scrolling-active");
+			}
+
+		});
+
+	</script>
+</body>
+</html>
